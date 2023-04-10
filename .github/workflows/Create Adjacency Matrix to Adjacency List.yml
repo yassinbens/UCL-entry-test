@@ -1,0 +1,24 @@
+def mat_to_liste(adj_mat):
+    A=adj_mat
+    n=len(A)
+    L=[]
+    AL=[]
+    for i in range (n):
+        for j in range (n):
+            if A[i][j]==1:
+                L.append(j)
+        AL.append(L)
+        L=[]   
+    return (AL)
+    
+
+P =   [[0, 1, 0, 1, 0, 0],
+             [0, 0, 1, 0, 0, 0],
+             [1, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 1, 0],
+             [0, 0, 0, 1, 0, 0],
+             [0, 0, 0, 0, 0, 0]]
+mat_to_liste(P)
+
+U=[[0,1,0],[1,0,0],[0,0,1]]
+mat_to_liste(U)
