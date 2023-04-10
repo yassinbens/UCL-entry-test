@@ -1,0 +1,15 @@
+def reachable(adj_list, start_node):
+    s=start_node
+    U=adj_list
+    m=U[s]
+    n=[]
+    
+    while m!=n:
+        n=m
+        for i in n:
+            for j in U[i]:
+                if j not in m:
+                    m.append(j)
+    m.sort()
+    Se=set(m)
+    return Se
