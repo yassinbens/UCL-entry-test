@@ -1,0 +1,33 @@
+def mat_to_liste(adj_mat):
+    A=adj_mat
+    n=len(A)
+    L=[]
+    AL=[]
+    for i in range (n):
+        for j in range (n):
+            if A[i][j]==1:
+                L.append(j)
+        AL.append(L)
+        L=[]   
+    return (AL)
+ 
+#tests
+
+U =   [[0,1,0],[1,0,0],[0,0,1]]
+V =[[1,0,0,1],[0,0,0,1],[0,1,1,0],[0,0,0,0]]
+P =   [[0, 1, 0, 1, 0, 0],
+             [0, 0, 1, 0, 0, 0],
+             [1, 0, 0, 0, 0, 0],
+             [0, 0, 0, 0, 1, 0],
+             [0, 0, 0, 1, 0, 0],
+             [0, 0, 0, 0, 0, 0]]
+ 
+import unittest 
+class test (unittest.TestCase):
+    def test1(self):
+        self.assertEqual([[1],[0],[2]],mat_to_liste(U))
+    def test2(self):
+        self.assertEqual([[1, 3], [2], [0], [4], [3], []],mat_to_liste(P))
+    def test3(self):
+        self.assertEqual([[0, 3], [3], [1, 2], []],mat_to_liste(V))
+unittest.main()
